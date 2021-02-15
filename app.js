@@ -23,12 +23,14 @@ const showImages = (images) => {
     let div = document.createElement('div');
     div.className = 'col-lg-3 col-md-4 col-xs-6 img-item mb-2';
     div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}">`;
-    gallery.appendChild(div)
+    gallery.appendChild(div);
+    toggleSpinner(false);
   })
 
 }
 
 const getImages = (query) => {
+  toggleSpinner(true);
   fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
     .then(response => response.json())
     .then(data => showImages(data.hits))
@@ -117,6 +119,8 @@ searchBtn.addEventListener('click', function () {
   const search = document.getElementById('search');
   getImages(search.value)
   sliders.length = 0;
+
+  footerPosition();
 });
 
 // press enter kye 
@@ -136,3 +140,19 @@ const duration = document.getElementById('duration').value || 1000 ;
    alert("Sorry you cannot input 'MINUS' number.")
  }
 })
+
+const toggleSpinner = (show) =>{
+  const spinner = document.getElementById("loading");
+  if (show) {
+    spinner.classList.remove('d-none');
+  }
+  else{
+     spinner.classList.add('d-none');
+  }
+}
+
+function footerPosition(pageHeight) {
+  const footer = document.getElementById("footer");
+ footer.style.position='static';
+}
+

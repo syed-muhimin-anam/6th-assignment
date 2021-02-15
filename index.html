@@ -15,15 +15,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-  <div class="container">
-    <h4 class="mt-2 text-center">Search Image for create slider</h4>
+<body>  
+  <nav>
+      <div class="nav-item"> 
+      <a href="#"><p>Home</p></a>
+      <a href="#"><p>About Us</p></a>
+      <a href="#"><p>Details</p></a>
+      <a href="#"><p>Join with us</p></a>
+      <a href="#"><p>Contact Us</p></a>
+      </div>
+      </nav>
+
+  <div class="container-fluid">
+    <h4 class="mt-4 text-center">Search Image for create slider</h4>
     <div class="form-inline mt-3 d-flex justify-content-center">
       <div class="input-group col-md-6 mb-2">
         <input type="text" class="form-control" id="search" placeholder="nature">
       </div>
       <button type="button" id="search-btn" class="btn btn-primary mb-2">Search</button>
     </div>
+   <!-- spinner -->
+    <div  class="d-flex justify-content-center  ">
+      <div id="loading" class="spinner-border text-primary d-none mt-5" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
     <section class="images">
       <div class="justify-content-around align-items-center mt-3 gallery-header mb-2">
         <h3 class="head-title text-center">Select image for create slider</h3>
@@ -46,7 +63,24 @@
         <span class="dot" onclick="changeItem(1)"></span>
       </div>
     </div>
-  </div>
+</div>
+    <!-- footer -->
+    <div id="footer" class="container-fluid" >
+      <div class="row">
+        <div class="col-md-12 bg-primary text-light d-flex justify-content-center ">
+          <div class="  justify-content-center">
+            <h3>Stay Connect on</h3>
+            <div>
+              <i class="fab fa-facebook-square"></i>
+              <i class="fab fa-instagram ms-2"></i>
+              <i class="fab fa-twitter-square ms-2"></i>
+            </div>
+            copyright@2025-anam template#
+          </div>
+        </div>
+      </div>
+    </div>
+
   <!-- Optional JavaScript -->
   <script src="./app.js"></script>
 </body>
